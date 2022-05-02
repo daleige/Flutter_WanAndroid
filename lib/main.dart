@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (index == 0) {
                 return const IndexPage();
               } else if (index == 1) {
-                return const SquarePage();
+                return const RandomWordsPage();
               } else if (index == 2) {
                 return const Text("我是第3页");
               } else if (index == 3) {
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: '首页',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.square),
+              icon: Icon(Icons.public_rounded),
               label: '广场',
             ),
             BottomNavigationBarItem(
