@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/IndexPage.dart';
-import 'package:flutter_wanandroid/SquarePage.dart';
+import 'package:flutter_wanandroid/study/LayoutPage.dart';
+import 'package:flutter_wanandroid/study/RandomWordsPage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '首页',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blueAccent,
       ),
       home: const MyHomePage(title: '玩Android'),
     );
@@ -134,6 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
       msg: "点击搜索",
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
+    );
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const LayoutPage()),
     );
   }
 
