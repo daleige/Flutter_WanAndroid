@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/IndexPage.dart';
+import 'package:flutter_wanandroid/pages/SquarePage.dart';
 import 'package:flutter_wanandroid/study/JumpPage.dart';
 import 'package:flutter_wanandroid/study/RandomWordsPage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (index == 0) {
                 return const IndexPage();
               } else if (index == 1) {
-                return const RandomWordsPage();
+                return  SquarePage();
               } else if (index == 2) {
                 return const Text("我是第3页");
               } else if (index == 3) {
