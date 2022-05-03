@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/bean/TestBean.dart';
 import 'package:flutter_wanandroid/bean/User.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/IndexPage.dart';
-import 'package:flutter_wanandroid/study/LayoutPage.dart';
+import 'package:flutter_wanandroid/study/JumpPage.dart';
 import 'package:flutter_wanandroid/study/RandomWordsPage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const LayoutPage()),
+      MaterialPageRoute(builder: (context) => JumpPage()),
     );
   }
 

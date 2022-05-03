@@ -16,6 +16,7 @@ dependencies:
   english_words: ^4.0.0
   #json序列化
   json_annotation: ^4.4.0
+  #屏幕适配
 
 dev_dependencies:
   flutter_test:
