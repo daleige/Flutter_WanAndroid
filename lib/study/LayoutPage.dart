@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_wanandroid/bean/TestBean.dart';
+import 'package:flutter_wanandroid/bean/User.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({Key? key}) : super(key: key);
@@ -105,9 +110,54 @@ class LayoutPageState extends State<LayoutPage> {
                   Theme.of(context).primaryColor, Icons.share, "SHARE"),
             ],
           ),
-          textSection
+          textSection,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              ElevatedButton(
+                child: const Text("序列化json"),
+                onPressed: () {
+                  String jsonStr =
+                      '''{"name":"张三","email":"766790183@qq.com","age":98}''';
+                  print('-----------> 开始=$jsonStr');
+
+                  //解析json为User对象
+                  Map<String, dynamic> userMap = jsonDecode(jsonStr);
+                  var user = User.fromJson(userMap);
+                  print("反序列化结果=name=${user.name} age=${user.age} email=${user.email}");
+                  var json = jsonEncode(user);
+                  print('序列化结果：$json');
+                },
+              ),
+              ElevatedButton(
+                child: const Text("序列化接续嵌套json"),
+                onPressed: () {
+                  String jsonStr = testBeanJson;
+                  //解析json为User对象
+                  Map<String, dynamic> testBeanMap = jsonDecode(jsonStr);
+                  TestBean testBean = TestBean.fromJson(testBeanMap);
+                  print("反序列化结果=${testBean.name},${testBean.address?.content}");
+                  var json = jsonEncode(testBean);
+                  print('序列化结果：$json');
+                },
+              )
+            ],
+          )
         ],
       ),
     );
   }
+
+  String testBeanJson = '''
+  {
+    "name":"张三",
+    "email":"766790183@qq.com",
+    "age":98,
+    "address":{
+        "code":"777",
+        "content":"深圳市宝安区"
+    }
+}
+  ''';
 }
